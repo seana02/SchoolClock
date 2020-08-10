@@ -1,0 +1,42 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+body {
+    background-color: #121212;
+}
+
+#clock {
+    font-family: 'Orbitron', sans-serif;
+    color: #66ff99;
+    font-size: 56px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#date {
+    font-family: 'Orbitron', sans-serif;
+    color: #66ff99;
+    font-size: 28px;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+#schoolDay {
+    font-family: 'Orbitron', sans-serif;
+    color: #66ff99;
+    font-size: 18px;
+    text-align: left;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#credit {
+    font-family: 'Orbitron', sans-serif;
+    color: #66ff99;
+    font-size: 10px;
+    float: right;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
