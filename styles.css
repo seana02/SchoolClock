@@ -5,9 +5,12 @@ body {
     background-color: #121212;
 }
 
-#clock {
+div {
     font-family: 'Orbitron', sans-serif;
     color: #66ff99;
+}
+
+#clock {
     font-size: 56px;
     text-align: center;
     padding-top: 40px;
@@ -15,17 +18,13 @@ body {
 }
 
 #date {
-    font-family: 'Orbitron', sans-serif;
-    color: #66ff99;
     font-size: 28px;
     text-align: center;
     padding-top: 0px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 #schoolDay {
-    font-family: 'Orbitron', sans-serif;
-    color: #66ff99;
     font-size: 18px;
     text-align: left;
     padding-top: 0px;
@@ -33,10 +32,42 @@ body {
 }
 
 #credit {
-    font-family: 'Orbitron', sans-serif;
-    color: #66ff99;
     font-size: 10px;
     float: right;
     padding-top: 0px;
     padding-bottom: 0px;
+}
+
+.time {
+    font-size: 24px;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#altid {
+    white-space: pre;
+    text-align: center;
+    font-size: 28px;
+    padding-bottom: 15px;
+    color: #0055ff;
+}
+
+#schedule {
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Orbitron', sans-serif;
+    color: #66ff99;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: #0055ff;
+}
+
+#time {
+    text-align: left;
+}
+
+.period {
+    text-align: right;
 }

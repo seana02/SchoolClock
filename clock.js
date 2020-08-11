@@ -58,6 +58,43 @@ function currentDate(){
         document.getElementById("schoolDay").textContent = dayText;
     }
 
+    //blue day vs orange day
+    {
+        //blue day
+        if(dayCount%2==1){
+            document.getElementById("altid").style.color = "#0055ff";
+            document.getElementById("altid").textContent = "Blue Day";
+            document.getElementById("schedule").style.borderColor = "#0055ff";
+            document.getElementById("p1").textContent = "1st Period";
+            document.getElementById("p2").textContent = "3rd Period";
+            document.getElementById("p3").textContent = "5th Period";
+        }
+        //before first day
+        else if(dayCount==0){
+            document.getElementById("altid").style.color = "#0055ff";
+
+            if(17-date.getDate()==1)
+                var daysLeft = "1 Day Until School";
+            else
+                var daysLeft = (17-date.getDate()) + " Days Until School";
+
+            document.getElementById("altid").textContent = "First Day is Blue Day\r\n" + daysLeft;
+            document.getElementById("schedule").style.borderColor = "#0033ff";
+            document.getElementById("p1").textContent = "1st Period";
+            document.getElementById("p2").textContent = "3rd Period";
+            document.getElementById("p3").textContent = "5th Period";
+        }
+        //orange day
+        else{
+            document.getElementById("altid").style.color = "orange";
+            document.getElementById("altid").textContent = "Orange Day";
+            document.getElementById("schedule").style.borderColor = "orange";
+            document.getElementById("p1").textContent = "2nd Period";
+            document.getElementById("p2").textContent = "4th Period";
+            document.getElementById("p3").textContent = "6th Period";
+        }
+    }
+
 
     var t = setTimeout(currentDate, 1000);
 }
