@@ -1,6 +1,6 @@
 function currentDate(){
 
-        var date = new Date();
+    var date = new Date();
 
     //time
     {
@@ -95,8 +95,50 @@ function currentDate(){
         }
     }
 
+    //white on current period
+    {
+        var r;
+        //hr
+        if(between(date, 8,10, 8,35))
+            r = 0;
+        else if(between(date, 8,45, 10,15))
+            r = 1;
+        else if(between(date, 10,25, 11,55))
+            r = 2;
+        else if(between(date, 11,55, 12,55))
+            r = 3;
+        else if(between(date, 12,55, 14,25))
+            r = 4;
+        else if(between(date, 14,35, 15,25))
+            r = 5;
+        else
+            r = -1;
+
+            for(var i=0; i<=5; i++){
+                if(i == r)
+                    document.getElementById("row" + r).style.color = "white";
+                else
+                    document.getElementById("row" + i).style.color = "#66ff99";
+            }
+
+
+
+    }
+
 
     var t = setTimeout(currentDate, 1000);
+}
+
+function between(d, h1,m1, h2,m2){
+    var h = d.getHours();
+    var m = d.getMinutes();
+    if(h1 < h && h < h2)
+        return true;
+    if(h1 == h && m1 <= m)
+        return true;
+    if(h2 == h && m <= m2)
+        return true;
+    return false;
 }
 
 function updateTime(k){
@@ -218,5 +260,7 @@ function isHoliday(d){
     return false;
 
 }
+
+
 
 currentDate();
