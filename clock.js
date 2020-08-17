@@ -2,6 +2,11 @@ function currentDate(){
 
     var date = new Date();
 
+    if(date.getSeconds()%2==0)
+        document.getElementById("flash").style.color = "yellow";
+    else 
+        document.getElementById("flash").style.color = "#aaffdd";
+
     //time
     {
         var hour = updateTime(date.getHours());
@@ -99,16 +104,24 @@ function currentDate(){
     {
         var r;
         //hr
-        if(between(date, 8,10, 8,35))
+        if(between(date, 8,0, 8,10))
+            r = -0.5;
+        else if(between(date, 8,10, 8,35))
             r = 0;
+        else if(between(date, 8,35, 8,45))
+            r = 0.5;
         else if(between(date, 8,45, 10,15))
             r = 1;
+        else if(between(date, 10,15, 10,25))
+            r = 1.5;
         else if(between(date, 10,25, 11,55))
             r = 2;
         else if(between(date, 11,55, 12,55))
             r = 3;
         else if(between(date, 12,55, 14,25))
             r = 4;
+        else if(between(date, 14,25, 14,35))
+            r = 4.5;
         else if(between(date, 14,35, 15,25))
             r = 5;
         else
@@ -117,6 +130,12 @@ function currentDate(){
             for(var i=0; i<=5; i++){
                 if(i == r)
                     document.getElementById("row" + r).style.color = "white";
+                else if(r+0.5 == i){
+                    if(date.getSeconds()%2==0)
+                        document.getElementById("row" + (r+0.5)).style.color = "yellow";
+                    if(date.getSeconds()%2==1)
+                        document.getElementById("row" + (r+0.5)).style.color = "#aaffdd";
+                }
                 else
                     document.getElementById("row" + i).style.color = "#66ff99";
             }
@@ -132,11 +151,18 @@ function currentDate(){
 function between(d, h1,m1, h2,m2){
     var h = d.getHours();
     var m = d.getMinutes();
+
+    if(h1==h2 && h==h1){
+        if(m1 <= m && m < m2)
+            return true;
+        return false;
+    }   
+
     if(h1 < h && h < h2)
         return true;
     if(h1 == h && m1 <= m)
         return true;
-    if(h2 == h && m <= m2)
+    if(h2 == h && m < m2)
         return true;
     return false;
 }
