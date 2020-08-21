@@ -67,12 +67,20 @@ function currentDate(){
     {
         //blue day
         if(dayCount%2==1){
+
             document.getElementById("altid").style.color = "#0055ff";
             document.getElementById("altid").textContent = "Blue Day";
             document.getElementById("schedule").style.borderColor = "#0055ff";
             document.getElementById("p1").textContent = "1st Period";
             document.getElementById("p2").textContent = "3rd Period";
             document.getElementById("p3").textContent = "5th Period";
+
+            
+            if(between(date, 15,25, 23,59)){
+                document.getElementById("altid").style.color = "orange";
+                document.getElementById("altid").textContent = "Tomorrow is Orange Day";
+            }
+            
         }
         //before first day
         else if(dayCount==0){
@@ -97,6 +105,12 @@ function currentDate(){
             document.getElementById("p1").textContent = "2nd Period";
             document.getElementById("p2").textContent = "4th Period";
             document.getElementById("p3").textContent = "6th Period";
+
+            
+            if(between(date, 15,25, 23,59)){
+                document.getElementById("altid").style.color = "#0055ff";
+                document.getElementById("altid").textContent = "Tomorrow is Blue Day";
+            }
         }
     }
 
