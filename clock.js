@@ -14,7 +14,7 @@ function currentDate(){
         var sec = updateTime(date.getSeconds());
         var am_pm = "AM";
 
-        if(hour > 12){
+        if(hour >= 12){
             hour -= 12;
             am_pm = "PM";
         }
@@ -22,8 +22,8 @@ function currentDate(){
             hour = 12;
         }
        
-
     document.getElementById("clock").textContent = hour + " : " + min + " : " + sec + " " + am_pm;
+    document.title = hour + ":" + min + ":" + sec + " " + am_pm;
 
     }
 
