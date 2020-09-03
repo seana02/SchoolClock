@@ -114,6 +114,17 @@ function currentDate(){
         }
     }
 
+    //Hard-Coded Date Labels
+    {
+
+        if(date.getMonth()==8 && date.getDate()==7){
+            document.getElementById("altid").textContent = "Labor Day";
+        }
+        else if(date.getMonth()==8 && date.getDate()==17){
+            document.getElementById("message").textContent = "turned 18 today";
+        }
+    }
+
     //white on current period
     {
         var r;
