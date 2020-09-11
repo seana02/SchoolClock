@@ -41,10 +41,7 @@ div {
 }
 
 .time {
-    font-size: 24px;
-    text-align: center;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    text-align: left;
 }
 
 #altid {
@@ -63,10 +60,6 @@ div {
     margin-right: auto;
     border-style: solid;
     border-color: #0055ff;
-}
-
-#time {
-    text-align: left;
 }
 
 .period {
