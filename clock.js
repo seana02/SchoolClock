@@ -76,26 +76,11 @@ function currentDate(){
             document.getElementById("p3").textContent = "5th Period";
 
             
-            if(between(date, 15,25, 23,59)){
+            if(between(date, 15,15, 23,59)){
                 document.getElementById("altid").style.color = "orange";
                 document.getElementById("altid").textContent = "Tomorrow is Orange Day";
             }
             
-        }
-        //before first day
-        else if(dayCount==0){
-            document.getElementById("altid").style.color = "#0055ff";
-
-            if(17-date.getDate()==1)
-                var daysLeft = "1 Day Until School";
-            else
-                var daysLeft = (17-date.getDate()) + " Days Until School";
-
-            document.getElementById("altid").textContent = "First Day is Blue Day\r\n" + daysLeft;
-            document.getElementById("schedule").style.borderColor = "#0033ff";
-            document.getElementById("p1").textContent = "1st Period";
-            document.getElementById("p2").textContent = "3rd Period";
-            document.getElementById("p3").textContent = "5th Period";
         }
         //orange day
         else{
@@ -117,8 +102,8 @@ function currentDate(){
     //Hard-Coded Date Labels
     {
 
-        if(date.getMonth()==8 && date.getDate()==7){
-            document.getElementById("altid").textContent = "Labor Day";
+        if(date.getMonth()==8 && date.getDate()>=11 && date.getDate()<=16 && date.getDate()!=14){
+            document.getElementById("message").textContent = "https://youtu.be/dQw4w9WgXcQ";
         }
         else if(date.getMonth()==8 && date.getDate()==17){
             document.getElementById("message").textContent = "turned 18 today";
@@ -131,23 +116,23 @@ function currentDate(){
         //hr
         if(between(date, 8,0, 8,10))
             r = -0.5;
-        else if(between(date, 8,10, 8,35))
+        else if(between(date, 8,10, 8,30))
             r = 0;
-        else if(between(date, 8,35, 8,45))
+        else if(between(date, 8,30, 8,40))
             r = 0.5;
-        else if(between(date, 8,45, 10,15))
+        else if(between(date, 8,40, 10,10))
             r = 1;
-        else if(between(date, 10,15, 10,25))
+        else if(between(date, 10,10, 10,20))
             r = 1.5;
-        else if(between(date, 10,25, 11,55))
+        else if(between(date, 10,20, 11,50))
             r = 2;
-        else if(between(date, 11,55, 12,55))
-            r = 3;
-        else if(between(date, 12,55, 14,25))
+        else if(between(date, 11,50, 11,55))
+            r=3.5;
+        else if(between(date, 11,55, 14,10))
             r = 4;
-        else if(between(date, 14,25, 14,35))
+        else if(between(date, 14,10, 14,20))
             r = 4.5;
-        else if(between(date, 14,35, 15,25))
+        else if(between(date, 14,20, 15,15))
             r = 5;
         else
             r = -1;
@@ -166,8 +151,45 @@ function currentDate(){
             }
 
 
+            //color lunch period
+            if(between(date, 11,55, 12,25) || between(date, 12,30, 13,00) || between(date, 13,05, 13,35) || between(date, 13,40, 14,10)){
+                document.getElementById("row3").style.color = "white";
+            }
+            else if(between(date, 11,50, 11,55) || between(date, 12,25, 12,30) || between(date, 13,00, 13,05) || between(date, 13,35, 13,40)){
+                if(date.getSeconds()%2==0)
+                    document.getElementById("row3").style.color = "yellow";
+                if(date.getSeconds()%2==1)
+                    document.getElementById("row3").style.color = "#aaffdd";
+            }
+
+
 
     }
+
+    
+    //change lunch display
+    {
+
+        if(between(date, 12,25, 13,00)){
+            document.getElementById("lunch").textContent = "Lunch B";
+            document.getElementById("time3").textContent = "12:30 - 1:00";
+        }
+        else if(between(date, 13,00, 13,35)){
+            document.getElementById("lunch").textContent = "Lunch C";
+            document.getElementById("time3").textContent = "1:05 - 1:35";
+        }
+        else if(between(date, 13,35, 14,10)){
+            document.getElementById("lunch").textContent = "Lunch D";
+            document.getElementById("time3").textContent = "1:40 - 2:10";
+        }
+        else{
+            document.getElementById("lunch").textContent = "Lunch A";
+            document.getElementById("time3").textContent = "11:55 - 12:25";
+        }
+    }
+
+
+
 
 
     var t = setTimeout(currentDate, 1000);
