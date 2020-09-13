@@ -106,7 +106,7 @@ function currentDate(){
             document.getElementById("message").textContent = "https://youtu.be/dQw4w9WgXcQ";
         }
         else if(date.getMonth()==8 && date.getDate()==17){
-            document.getElementById("message").textContent = "turned 18 today";
+            document.getElementById("message").textContent = "happy birthday but i still have school :(";
         }
     }
 
