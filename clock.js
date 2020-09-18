@@ -1,6 +1,8 @@
 function currentDate(){
 
     var date = new Date();
+    date.setMonth(11);
+    date.setDate(25);
 
     if(date.getSeconds()%2==0)
         document.getElementById("flash").style.color = "yellow";
@@ -61,6 +63,7 @@ function currentDate(){
         }
 
         document.getElementById("schoolDay").textContent = dayText;
+        document.getElementById("message").textContent = 180-dayCount + " Days Left";
     }
 
     //blue day vs orange day
@@ -102,11 +105,28 @@ function currentDate(){
     //Hard-Coded Date Labels
     {
 
-        if(date.getMonth()==8 && date.getDate()>=11 && date.getDate()<=16 && date.getDate()!=14){
-            document.getElementById("message").textContent = "https://youtu.be/dQw4w9WgXcQ";
-        }
-        else if(date.getMonth()==8 && date.getDate()==17){
-            document.getElementById("message").textContent = "happy birthday but i still have school :(";
+        if(date.getMonth()==11 && date.getDate()==25){
+            document.getElementById("message").textContent = "Merry Christmas!!";
+
+            var time = document.getElementsByClassName("time");
+            for(var i=0; i<time.length; i++){
+                time[i].style.color = "red";
+            }
+
+            var period = document.getElementsByClassName("period");
+            for(var i=0; i<period.length; i++){
+                period[i].style.color = "white";
+            }
+
+            if(date.getSeconds()%3==0){
+                document.getElementById("clock").style.color = "red";
+            }
+            else if(date.getSeconds()%3==1){
+                document.getElementById("clock").style.color = "white";
+            }
+            else{
+                document.getElementById("clock").style.color = "#1FD537";
+            }
         }
     }
 
