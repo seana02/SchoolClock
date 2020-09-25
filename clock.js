@@ -126,6 +126,13 @@ function currentDate(){
                 document.getElementById("clock").style.color = "#1FD537";
             }
         }
+        
+        if(date.getMonth()==8 && date.getDate()==25){
+            document.getElementById("clock").style.color = "gold";
+            document.getElementById("date").style.color = "gold";
+            document.getElementById("message").textContent = "Gold out!!";
+            document.getElementById("message").style.color = "gold";
+        }
     }
 
     //white on current period
