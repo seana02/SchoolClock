@@ -128,10 +128,10 @@ function currentDate(){
         }
         
         if(date.getMonth()==8 && date.getDate()==25){
-            document.getElementById("clock").style.color = "gold";
-            document.getElementById("date").style.color = "gold";
+            document.getElementById("clock").style.color = "#ffd700";
+            document.getElementById("date").style.color = "#ffd700";
             document.getElementById("message").textContent = "Gold out!!";
-            document.getElementById("message").style.color = "gold";
+            document.getElementById("message").style.color = "#ffd700";
         }
     }
 
