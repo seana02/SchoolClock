@@ -127,11 +127,10 @@ function currentDate(){
             }
         }
         
-        if(date.getMonth()==8 && date.getDate()==25){
-            document.getElementById("clock").style.color = "#ffd700";
-            document.getElementById("date").style.color = "#ffd700";
-            document.getElementById("message").textContent = "Gold out!!";
-            document.getElementById("message").style.color = "#ffd700";
+        if(date.getMonth()==8 && date.getDate()==28){
+            document.getElementById("clock").style.color = "#b19cd9";
+            document.getElementById("date").style.color = "#b19cd9";
+            document.getElementById("message").style.color = "#b19cd9";
         }
     }
 
