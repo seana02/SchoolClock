@@ -319,6 +319,7 @@ function updateMonth(k){
 function isHoliday(d){
     var holidays = [
         new Date("9/7/2020"),
+        new Date("10/12/2020"),
         new Date("11/11/2020"),
         new Date("11/23/2020"),
         new Date("11/24/2020"),
@@ -338,6 +339,7 @@ function isHoliday(d){
         new Date("1/2/2021"),
         new Date("1/3/2021"),
         new Date("1/4/2021"),
+        new Date("1/5/2021"),
         new Date("1/18/2021"),
         new Date("2/15/2021"),
         new Date("3/29/2021"),
