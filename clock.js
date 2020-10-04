@@ -77,7 +77,7 @@ function currentDate(){
             document.getElementById("p3").textContent = "5th Period";
 
             
-            if(between(date, 15,15, 23,59)){
+            if(between(date, 15,15, 23,59) || date.getDay()==0 || date.getDay()==6){
                 document.getElementById("altid").style.color = "orange";
                 document.getElementById("altid").textContent = "Tomorrow is Orange Day";
             }
@@ -93,7 +93,7 @@ function currentDate(){
             document.getElementById("p3").textContent = "6th Period";
 
             
-            if(between(date, 15,25, 23,59)){
+            if(between(date, 15,25, 23,59) || date.getDay()==0 || date.getDay()==6){
                 document.getElementById("altid").style.color = "#0055ff";
                 document.getElementById("altid").textContent = "Tomorrow is Blue Day";
             }
@@ -127,10 +127,8 @@ function currentDate(){
             }
         }
         
-        if(date.getMonth()==8 && date.getDate()==28){
-            document.getElementById("clock").style.color = "#b19cd9";
-            document.getElementById("date").style.color = "#b19cd9";
-            document.getElementById("message").style.color = "#b19cd9";
+        if(date.getMonth()==9 && (5<=date.getDate() && date.getDate()<=7)){
+            document.getElementById("message").textContent = "There's no escaping all the work!";
         }
     }
 
