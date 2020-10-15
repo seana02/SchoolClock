@@ -77,9 +77,13 @@ function currentDate(){
             document.getElementById("p3").textContent = "5th Period";
 
             
-            if(between(date, 15,15, 23,59) || date.getDay()==0 || date.getDay()==6){
+            if(between(date, 15,15, 23,59)){
                 document.getElementById("altid").style.color = "orange";
                 document.getElementById("altid").textContent = "Tomorrow is Orange Day";
+            }
+            if(date.getDay()==0 || date.getDay()==6 || isHoliday(date)){
+                document.getElementById("altid").stle.color = "orange";
+                document.getElementById("altid").textContent = "Next is Orange Day";
             }
             
         }
@@ -93,9 +97,13 @@ function currentDate(){
             document.getElementById("p3").textContent = "6th Period";
 
             
-            if(between(date, 15,25, 23,59) || date.getDay()==0 || date.getDay()==6){
+            if(between(date, 15,25, 23,59)){
                 document.getElementById("altid").style.color = "#0055ff";
                 document.getElementById("altid").textContent = "Tomorrow is Blue Day";
+            }
+            if(date.getDay()==0 || date.getDay()==6 || isHoliday(date)){
+                document.getElementById("altid").stle.color = "#0055ff";
+                document.getElementById("altid").textContent = "Next is Blue Day";
             }
         }
     }
