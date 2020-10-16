@@ -138,6 +138,10 @@ function currentDate(){
         if(date.getMonth()==9 && (5<=date.getDate() && date.getDate()<=7)){
             document.getElementById("message").textContent = "There's no escaping all the work!";
         }
+        
+        if(date.getMonth()==9 && date.getDate()==16){
+            document.getElementById("message").textContent = "Hunt-a-Hawk!";
+        }
     }
 
     //white on current period
