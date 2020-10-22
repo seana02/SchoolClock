@@ -133,6 +133,10 @@ function currentDate(){
             else{
                 document.getElementById("clock").style.color = "#1FD537";
             }
+            
+            if(date.getMonth()==8 && date.getDate()==23){
+                document.getElementById("clock").style.color = "#F8ABBA";
+            }
         }
         
         if(date.getMonth()==9 && (5<=date.getDate() && date.getDate()<=7)){
