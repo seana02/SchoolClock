@@ -82,7 +82,7 @@ function currentDate(){
                 document.getElementById("altid").textContent = "Tomorrow is Orange Day";
             }
             if(date.getDay()==0 || date.getDay()==6 || isHoliday(date)){
-                document.getElementById("altid").stle.color = "orange";
+                document.getElementById("altid").style.color = "orange";
                 document.getElementById("altid").textContent = "Next is Orange Day";
             }
             
@@ -102,7 +102,7 @@ function currentDate(){
                 document.getElementById("altid").textContent = "Tomorrow is Blue Day";
             }
             if(date.getDay()==0 || date.getDay()==6 || isHoliday(date)){
-                document.getElementById("altid").stle.color = "#0055ff";
+                document.getElementById("altid").style.color = "#0055ff";
                 document.getElementById("altid").textContent = "Next is Blue Day";
             }
         }
