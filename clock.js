@@ -3,7 +3,7 @@ function currentDate(){
     var date = new Date();
     date.setDate(30);
     date.setHour(11);
-    date.setMinute(55);
+    date.setMinutes(55);
 
     if(date.getSeconds()%2==0)
         document.getElementById("flash").style.color = "yellow";
