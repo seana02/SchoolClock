@@ -108,6 +108,8 @@ function currentDate(){
         }
     }
 
+    
+
     //white on current period
     {
         var r;
@@ -189,7 +191,7 @@ function currentDate(){
 
     //Hard-Coded Date Labels
     {
-        
+
         if(date.getMonth()==11 && date.getDate()==25){
             document.getElementById("message").textContent = "Merry Christmas!!";
 
@@ -225,10 +227,9 @@ function currentDate(){
         if(date.getMonth()==9 && date.getDate()==16){
             document.getElementById("message").textContent = "Hunt-a-Hawk!";
         }
+
         
-        /*
-        //halloweed special schedule
-        if(date.getMonth()==9 && date.getDate() == 30){
+        if(date.getMonth()==9 && date.getDate()==30){//Halloween Schedule Special
             //flip 1st/7th labels
             document.getElementById("p7").textContent = "1st Period";
             document.getElementById("p1").textContent = "7th Period";
@@ -240,17 +241,17 @@ function currentDate(){
             document.getElementById("time4").textContent = "11:20 - 1:35";
             document.getElementById("time5").textContent = "1:45 - 3:15";
             
-            /*
+            
             //change time functionality
-            if(between(date, 11,55, 12,25)){
+            if(between(date, 11,50, 12,20)){
                 document.getElementById("lunch").textContent = "Lunch B";
                 document.getElementById("time3").textContent = "11:55 - 12:25";
             }
-            else if(between(date, 12,30, 13,00)){
+            else if(between(date, 12,20, 12,55)){
                 document.getElementById("lunch").textContent = "Lunch C";
                 document.getElementById("time3").textContent = "12:30 - 1:00";
             }
-            else if(between(date, 13,05, 13,35)){
+            else if(between(date, 13,00, 13,35)){
                 document.getElementById("lunch").textContent = "Lunch D";
                 document.getElementById("time3").textContent = "1:05 - 1:35";
             }
@@ -260,7 +261,6 @@ function currentDate(){
             }
             
             //flashing colors
-            var r;
             //hr
             if(between(date, 8,0, 8,10))
                 r = -0.5;
@@ -284,7 +284,6 @@ function currentDate(){
                 r = 5;
             else
                 r = -1;
-
             for(var i=0; i<=5; i++){
                 if(i == r)
                     document.getElementById("row" + r).style.color = "white";
@@ -298,7 +297,6 @@ function currentDate(){
                     document.getElementById("row" + i).style.color = "#66ff99";
             }
             
-
             
             //color lunch period
             if(between(date, 11,20, 11,50) || between(date, 11,55, 12,25) || between(date, 12,30, 13,00) || between(date, 13,05, 13,35)){
@@ -310,12 +308,8 @@ function currentDate(){
                 if(date.getSeconds()%2==1)
                     document.getElementById("row3").style.color = "#aaffdd";
             }
-            
+        }//Halloween Schedule Special
 
-            
-        }//halloween special schedule
-    */
-        
     }
 
 
