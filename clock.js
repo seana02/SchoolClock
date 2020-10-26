@@ -257,6 +257,58 @@ function currentDate(){
                 document.getElementById("time3").textContent = "11:20-11:50";
             }
             
+            //flashing colors
+            var r;
+            //hr
+            if(between(date, 8,0, 8,10))
+                r = -0.5;
+            else if(between(date, 8,10, 8,30))
+                r = 0;
+            else if(between(date, 8,30, 8,40))
+                r = 0.5;
+            else if(between(date, 8,40, 9,35))
+                r = 1;
+            else if(between(date, 9,35, 9,45))
+                r = 1.5;
+            else if(between(date, 9,45, 11,15))
+                r = 2;
+            else if(between(date, 11,15, 11,20))
+                r = 3.5;
+            else if(between(date, 11,20, 13,35))
+                r = 4;
+            else if(between(date, 13,35, 13,45))
+                r = 4.5;
+            else if(between(date, 13,45, 15,15))
+                r = 5;
+            else
+                r = -1;
+
+            for(var i=0; i<=5; i++){
+                if(i == r)
+                    document.getElementById("row" + r).style.color = "white";
+                else if(r+0.5 == i){
+                    if(date.getSeconds()%2==0)
+                        document.getElementById("row" + (r+0.5)).style.color = "yellow";
+                    if(date.getSeconds()%2==1)
+                        document.getElementById("row" + (r+0.5)).style.color = "#aaffdd";
+                }
+                else
+                    document.getElementById("row" + i).style.color = "#66ff99";
+            }
+
+
+            //color lunch period
+            if(between(date, 11,55, 12,25) || between(date, 12,30, 13,00) || between(date, 13,05, 13,35) || between(date, 13,40, 14,10)){
+                document.getElementById("row3").style.color = "white";
+            }
+            else if(between(date, 11,50, 11,55) || between(date, 12,25, 12,30) || between(date, 13,00, 13,05) || between(date, 13,35, 13,40)){
+                if(date.getSeconds()%2==0)
+                    document.getElementById("row3").style.color = "yellow";
+                if(date.getSeconds()%2==1)
+                    document.getElementById("row3").style.color = "#aaffdd";
+            }
+
+            
         }//halloween special schedule
         
     }
