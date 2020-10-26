@@ -241,6 +241,8 @@ function currentDate(){
             document.getElementById("time3").textContent = "11:20 - 11:50";
             document.getElementById("time4").textContent = "11:20 - 1:35";
             document.getElementById("time5").textContent = "1:45 - 3:15";
+            
+            /*
             //change time functionality
             if(between(date, 11,55, 12,25)){
                 document.getElementById("lunch").textContent = "Lunch B";
@@ -297,7 +299,7 @@ function currentDate(){
                 else
                     document.getElementById("row" + i).style.color = "#66ff99";
             }
-
+            */
 
             //color lunch period
             if(between(date, 11,55, 12,25) || between(date, 12,30, 13,00) || between(date, 13,05, 13,35) || between(date, 13,40, 14,10)){
