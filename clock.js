@@ -189,7 +189,7 @@ function currentDate(){
 
     //Hard-Coded Date Labels
     {
-        /*
+        
         if(date.getMonth()==11 && date.getDate()==25){
             document.getElementById("message").textContent = "Merry Christmas!!";
 
@@ -226,6 +226,7 @@ function currentDate(){
             document.getElementById("message").textContent = "Hunt-a-Hawk!";
         }
         
+        /*
         //halloweed special schedule
         if(date.getMonth()==9 && date.getDate() == 30){
             //flip 1st/7th labels
@@ -309,10 +310,11 @@ function currentDate(){
                 if(date.getSeconds()%2==1)
                     document.getElementById("row3").style.color = "#aaffdd";
             }
-            */
+            
 
             
         }//halloween special schedule
+    */
         
     }
 
