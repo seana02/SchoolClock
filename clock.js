@@ -1,6 +1,7 @@
 function currentDate(){
 
     var date = new Date();
+    date.setDate(30);
 
     if(date.getSeconds()%2==0)
         document.getElementById("flash").style.color = "yellow";
@@ -108,46 +109,6 @@ function currentDate(){
         }
     }
 
-    //Hard-Coded Date Labels
-    {
-
-        if(date.getMonth()==11 && date.getDate()==25){
-            document.getElementById("message").textContent = "Merry Christmas!!";
-
-            var time = document.getElementsByClassName("time");
-            for(var i=0; i<time.length; i++){
-                time[i].style.color = "red";
-            }
-
-            var period = document.getElementsByClassName("period");
-            for(var i=0; i<period.length; i++){
-                period[i].style.color = "white";
-            }
-
-            if(date.getSeconds()%3==0){
-                document.getElementById("clock").style.color = "red";
-            }
-            else if(date.getSeconds()%3==1){
-                document.getElementById("clock").style.color = "white";
-            }
-            else{
-                document.getElementById("clock").style.color = "#1FD537";
-            }
-            
-            if(date.getMonth()==8 && date.getDate()==23){
-                document.getElementById("clock").style.color = "#F8ABBA";
-            }
-        }
-        
-        if(date.getMonth()==9 && (5<=date.getDate() && date.getDate()<=7)){
-            document.getElementById("message").textContent = "There's no escaping all the work!";
-        }
-        
-        if(date.getMonth()==9 && date.getDate()==16){
-            document.getElementById("message").textContent = "Hunt-a-Hawk!";
-        }
-    }
-
     //white on current period
     {
         var r;
@@ -226,6 +187,79 @@ function currentDate(){
         }
     }
 
+
+    //Hard-Coded Date Labels
+    {
+
+        if(date.getMonth()==11 && date.getDate()==25){
+            document.getElementById("message").textContent = "Merry Christmas!!";
+
+            var time = document.getElementsByClassName("time");
+            for(var i=0; i<time.length; i++){
+                time[i].style.color = "red";
+            }
+
+            var period = document.getElementsByClassName("period");
+            for(var i=0; i<period.length; i++){
+                period[i].style.color = "white";
+            }
+
+            if(date.getSeconds()%3==0){
+                document.getElementById("clock").style.color = "red";
+            }
+            else if(date.getSeconds()%3==1){
+                document.getElementById("clock").style.color = "white";
+            }
+            else{
+                document.getElementById("clock").style.color = "#1FD537";
+            }
+            
+            if(date.getMonth()==8 && date.getDate()==23){
+                document.getElementById("clock").style.color = "#F8ABBA";
+            }
+        }
+        
+        if(date.getMonth()==9 && (5<=date.getDate() && date.getDate()<=7)){
+            document.getElementById("message").textContent = "There's no escaping all the work!";
+        }
+        
+        if(date.getMonth()==9 && date.getDate()==16){
+            document.getElementById("message").textContent = "Hunt-a-Hawk!";
+        }
+        
+        //halloweed special schedule
+        if(date.getMonth()==9 && date.getDate() == 30){
+            //flip 1st/7th labels
+            document.getElementById("p7").textContent = "1st Period";
+            document.getElementById("p1").textContent = "7th Period";
+            
+            //change time displays
+            document.getElementById("time1").textContent = "8:40 - 9:35";
+            document.getElementById("time2").textContent = "9:45 - 11:15";
+            document.getElementById("time3").textContent = "11:20 - 11:50";
+            document.getElementById("time4").textContent = "11:20 - 1:35";
+            document.getElementById("time5").textContent = "1:45 - 3:15";
+            //change time functionality
+            if(between(date, 11,55, 12,25)){
+                document.getElementById("lunch").textContent = "Lunch B";
+                document.getElementById("time3").textContent = "11:55 - 12:25";
+            }
+            else if(between(date, 12,30, 13,00)){
+                document.getElementById("lunch").textContent = "Lunch C";
+                document.getElementById("time3").textContent = "12:30 - 1:00";
+            }
+            else if(between(date, 13,05, 13,35)){
+                document.getElementById("lunch").textContent = "Lunch D";
+                document.getElementById("time3").textContent = "1:05 - 1:35";
+            }
+            else{
+                document.getElementById("lunch").textContent = "Lunch A";
+                document.getElementById("time3").textContent = "11:20-11:50";
+            }
+            
+        }//halloween special schedule
+        
+    }
 
 
 
