@@ -192,7 +192,7 @@ function currentDate(){
 
     //Hard-Coded Date Labels
     {
-
+        /*
         if(date.getMonth()==11 && date.getDate()==25){
             document.getElementById("message").textContent = "Merry Christmas!!";
 
@@ -242,7 +242,7 @@ function currentDate(){
             document.getElementById("time4").textContent = "11:20 - 1:35";
             document.getElementById("time5").textContent = "1:45 - 3:15";
             
-            
+            /*
             //change time functionality
             if(between(date, 11,55, 12,25)){
                 document.getElementById("lunch").textContent = "Lunch B";
@@ -301,7 +301,7 @@ function currentDate(){
             }
             
 
-            /*
+            
             //color lunch period
             if(between(date, 11,20, 11,50) || between(date, 11,55, 12,25) || between(date, 12,30, 13,00) || between(date, 13,05, 13,35)){
                 document.getElementById("row3").style.color = "white";
