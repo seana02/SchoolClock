@@ -230,6 +230,7 @@ function currentDate(){
 
         
         if(date.getMonth()==9 && date.getDate()==30){//Halloween Schedule Special
+            document.getElementById("message").textContent = "Happy Spooky Season!";
             //flip 1st/7th labels
             document.getElementById("p7").textContent = "1st Period";
             document.getElementById("p1").textContent = "7th Period";
