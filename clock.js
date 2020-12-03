@@ -193,7 +193,7 @@ function currentDate(){
     //Hard-Coded Date Labels
     {
         
-        if(date.getMonth()==11 && date.getDate()>=22){
+        if(date.getMonth()==11 && date.getDate()<=22){
             document.getElementById("message").textContent = (23 - date.getDate()) + " Days until Winter Break";
         }
 
