@@ -62,6 +62,7 @@ function currentDate(){
 
         document.getElementById("schoolDay").textContent = dayText;
         document.getElementById("message").textContent = 180-dayCount + " Days Left";
+        
     }
 
     //blue day vs orange day
@@ -191,6 +192,10 @@ function currentDate(){
 
     //Hard-Coded Date Labels
     {
+        
+        if(date.getMonth()==11 && date.getDate()>=22){
+            document.getElementById("message").textContent = (23 - date.getDate()) + " Days until Winter Break";
+        }
 
         if(date.getMonth()==11 && date.getDate()==25){
             document.getElementById("message").textContent = "Merry Christmas!!";
