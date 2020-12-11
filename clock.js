@@ -195,6 +195,7 @@ function currentDate(){
         
         if(date.getMonth()==11 && date.getDate()==11){
             document.getElementById("p7").textContent = "Back to HR (Holiday Social)";
+            document.getElementById("schedule").width = "60%";
         }
         
         if(date.getMonth()==11 && date.getDate()<=22){
