@@ -193,13 +193,19 @@ function currentDate(){
     //Hard-Coded Date Labels
     {
         
+        
         if(date.getMonth()==11 && date.getDate()==22){
             document.getElementById("time3").textContent = "12:55";
             document.getElementById("lunch").textContent = "Early Release";
+            document.getElementById("message").textContent = "LAST DAAYYY!!!"
         }
         
-        if(date.getMonth()==11 && date.getDate()<=22){
+        if(date.getMonth()==11 && date.getDate()<=21){
             document.getElementById("message").textContent = (23 - date.getDate()) + " Days until Winter Break";
+        }
+
+        if(date.getMonth()==11 && date.getDate() == 21 && between(date, 15,25, 23,59)){
+            document.getElementById("altid").textContent = "Tomorrow is Orange Day (Early Release)";
         }
 
         if(date.getMonth()==11 && date.getDate()==25){
