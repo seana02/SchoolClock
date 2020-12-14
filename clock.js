@@ -193,9 +193,9 @@ function currentDate(){
     //Hard-Coded Date Labels
     {
         
-        if(date.getMonth()==11 && date.getDate()==11){
-            document.getElementById("p7").textContent = "Back to HR (Holiday Social)";
-            document.getElementById("schedule").width = "50%";
+        if(date.getMonth()==11 && date.getDate()==22){
+            document.getElementById("time3").textContent = "12:55";
+            document.getElementById("lunch").textContent = "Early Release";
         }
         
         if(date.getMonth()==11 && date.getDate()<=22){
@@ -230,96 +230,7 @@ function currentDate(){
             }
         }
         
-        if(date.getMonth()==9 && (5<=date.getDate() && date.getDate()<=7)){
-            document.getElementById("message").textContent = "There's no escaping all the work!";
-        }
         
-        if(date.getMonth()==9 && date.getDate()==16){
-            document.getElementById("message").textContent = "Hunt-a-Hawk!";
-        }
-
-        
-        if(date.getMonth()==9 && date.getDate()==30){//Halloween Schedule Special
-            document.getElementById("message").textContent = "Happy Spooky Season!";
-            //flip 1st/7th labels
-            document.getElementById("p7").textContent = "1st Period";
-            document.getElementById("p1").textContent = "7th Period";
-            
-            //change time displays
-            document.getElementById("time1").textContent = "8:40 - 9:35";
-            document.getElementById("time2").textContent = "9:45 - 11:15";
-            document.getElementById("time3").textContent = "11:20 - 11:50";
-            document.getElementById("time4").textContent = "11:20 - 1:35";
-            document.getElementById("time5").textContent = "1:45 - 3:15";
-            
-            
-            //change time functionality
-            if(between(date, 11,50, 12,20)){
-                document.getElementById("lunch").textContent = "Lunch B";
-                document.getElementById("time3").textContent = "11:55 - 12:25";
-            }
-            else if(between(date, 12,20, 12,55)){
-                document.getElementById("lunch").textContent = "Lunch C";
-                document.getElementById("time3").textContent = "12:30 - 1:00";
-            }
-            else if(between(date, 13,00, 13,35)){
-                document.getElementById("lunch").textContent = "Lunch D";
-                document.getElementById("time3").textContent = "1:05 - 1:35";
-            }
-            else{
-                document.getElementById("lunch").textContent = "Lunch A";
-                document.getElementById("time3").textContent = "11:20-11:50";
-            }
-            
-            //flashing colors
-            //hr
-            if(between(date, 8,0, 8,10))
-                r = -0.5;
-            else if(between(date, 8,10, 8,30))
-                r = 0;
-            else if(between(date, 8,30, 8,40))
-                r = 0.5;
-            else if(between(date, 8,40, 9,35))
-                r = 1;
-            else if(between(date, 9,35, 9,45))
-                r = 1.5;
-            else if(between(date, 9,45, 11,15))
-                r = 2;
-            else if(between(date, 11,15, 11,20))
-                r = 3.5;
-            else if(between(date, 11,20, 13,35))
-                r = 4;
-            else if(between(date, 13,35, 13,45))
-                r = 4.5;
-            else if(between(date, 13,45, 15,15))
-                r = 5;
-            else
-                r = -1;
-            for(var i=0; i<=5; i++){
-                if(i == r)
-                    document.getElementById("row" + r).style.color = "white";
-                else if(r+0.5 == i){
-                    if(date.getSeconds()%2==0)
-                        document.getElementById("row" + (r+0.5)).style.color = "yellow";
-                    if(date.getSeconds()%2==1)
-                        document.getElementById("row" + (r+0.5)).style.color = "#aaffdd";
-                }
-                else
-                    document.getElementById("row" + i).style.color = "#66ff99";
-            }
-            
-            
-            //color lunch period
-            if(between(date, 11,20, 11,50) || between(date, 11,55, 12,25) || between(date, 12,30, 13,00) || between(date, 13,05, 13,35)){
-                document.getElementById("row3").style.color = "white";
-            }
-            else if(between(date, 11,50, 11,55) || between(date, 12,25, 12,30) || between(date, 13,00, 13,05) || between(date, 13,35, 13,40)){
-                if(date.getSeconds()%2==0)
-                    document.getElementById("row3").style.color = "yellow";
-                if(date.getSeconds()%2==1)
-                    document.getElementById("row3").style.color = "#aaffdd";
-            }
-        }//Halloween Schedule Special
 
     }
 
