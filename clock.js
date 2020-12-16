@@ -194,11 +194,6 @@ function currentDate(){
     {
         
         
-        if((date.getMonth()==11 && date.getDate()==22) || (date.getMonth()==1 && date.getDate()==3) || (date.getMonth()==2 && date.getDate()==16) || (date.getMonth()==3 && date.getDate()==15) || (date.getMonth()==4 && date.getDate()==21)){
-            document.getElementById("time3").textContent = "12:55";
-            document.getElementById("lunch").textContent = "Early Release";
-        }
-        
         if(date.getMonth()==11 && date.getDate()==22){
             document.getElementById("message").textContent = "LAST DAAYYY!!!";
         }
@@ -210,6 +205,100 @@ function currentDate(){
         if(((date.getMonth()==11 && date.getDate()==21) || (date.getMonth()==1 && date.getDate()==2) || (date.getMonth()==2 && date.getDate()==15) || (date.getMonth()==3 && date.getDate()==14) || (date.getMonth()==4 && date.getDate()==20)) && between(date, 15,25, 23,59)){
             document.getElementById("altid").textContent = "Tomorrow is Early Release";
         }
+        
+        //early release scheduling
+        //Dec22, Feb3, Mar16, Apr15, May21
+        if((date.getMonth()==11 && date.getDate()==22) || (date.getMonth()==11 && date.getDate()==21 && between(date, 15,25, 23,59))){
+            document.getElementById("time0").textContent = "8:10 - 9:00";
+            document.getElementById("p0").textContent = "2nd Period";
+            document.getElementById("time1").textContent = "9:05 - 9:55";
+            document.getElementById("p1").textContent = "4th Period";
+            document.getElementById("time2").textContent = "10:00 - 10:50";
+            document.getElementById("p2").textContent = "6th Period";
+            document.getElementById("time4").textContent = "10:55 - 12:47";
+            document.getElementById("p3").textContent = "HR & Lunch";
+            document.getElementById("time5").textContent = "12:52 - 12:55";
+            document.getElementById("p7").textContent = "Dismissal";
+            
+            //change lunch display
+            {
+
+                if(between(date, 12,25, 13,00)){
+                    document.getElementById("lunch").textContent = "Lunch B (10th)";
+                    document.getElementById("time3").textContent = "11:24 - 11:49";
+                }
+                else if(between(date, 13,00, 13,35)){
+                    document.getElementById("lunch").textContent = "Lunch C (11th)";
+                    document.getElementById("time3").textContent = "11:53 - 12:18";
+                }
+                else if(between(date, 13,35, 14,10)){
+                    document.getElementById("lunch").textContent = "Lunch D (12th)";
+                    document.getElementById("time3").textContent = "12:22 - 12:47";
+                }
+                else{
+                    document.getElementById("lunch").textContent = "Lunch A (9th)";
+                    document.getElementById("time3").textContent = "10:55 - 11:20";
+                }
+            }
+            
+             //white on current period
+            {
+                var r;
+                //hr
+                if(between(date, 8,0, 8,10))
+                    r = -0.5;
+                else if(between(date, 8,10, 9,0))
+                    r = 0;
+                else if(between(date, 9,0 , 9,05))
+                    r = 0.5;
+                else if(between(date, 9,05 , 9,55))
+                    r = 1;
+                else if(between(date, 9,55 , 10,0))
+                    r = 1.5;
+                else if(between(date, 10,0 , 10,50))
+                    r = 2;
+                else if(between(date, 10,50 , 10,55))
+                    r=3.5;
+                else if(between(date, 10,55 , 12,47))
+                    r = 4;
+                else if(between(date, 12,47 , 12,52))
+                    r = 4.5;
+                else if(between(date, 12,52 , 12,55))
+                    r = 5;
+                else
+                    r = -1;
+
+                    for(var i=0; i<=5; i++){
+                        if(i == r)
+                            document.getElementById("row" + r).style.color = "white";
+                        else if(r+0.5 == i){
+                            if(date.getSeconds()%2==0)
+                                document.getElementById("row" + (r+0.5)).style.color = "yellow";
+                            if(date.getSeconds()%2==1)
+                                document.getElementById("row" + (r+0.5)).style.color = "#aaffdd";
+                        }
+                        else
+                            document.getElementById("row" + i).style.color = "#66ff99";
+                    }
+
+
+                    //color lunch period
+                    if(between(date, 10,55 , 11,20) || between(date, 11,24 , 11,49) || between(date, 11,53 , 12,18) || between(date, 12,22 , 12,47)){
+                        document.getElementById("row3").style.color = "white";
+                    }
+                    else if(between(date, 10,50 , 10,55) || between(date, 11,20 , 11,24) || between(date, 11,49 , 11,53) || between(date, 12,18 , 12,22)){
+                        if(date.getSeconds()%2==0)
+                            document.getElementById("row3").style.color = "yellow";
+                        if(date.getSeconds()%2==1)
+                            document.getElementById("row3").style.color = "#aaffdd";
+                    }
+
+
+
+            }
+            
+        }//end early release scheduling for 12/22
+        
 
         if(date.getMonth()==11 && date.getDate()==25){
             document.getElementById("message").textContent = "Merry Christmas!!";
