@@ -223,15 +223,15 @@ function currentDate(){
             //change lunch display
             {
 
-                if(between(date, 12,25, 13,00)){
+                if(between(date, 11,20 , 11,49)){
                     document.getElementById("lunch").textContent = "Lunch B (10th)";
                     document.getElementById("time3").textContent = "11:24 - 11:49";
                 }
-                else if(between(date, 13,00, 13,35)){
+                else if(between(date, 11,49 , 12,18)){
                     document.getElementById("lunch").textContent = "Lunch C (11th)";
                     document.getElementById("time3").textContent = "11:53 - 12:18";
                 }
-                else if(between(date, 13,35, 14,10)){
+                else if(between(date, 12,22 , 12,47)){
                     document.getElementById("lunch").textContent = "Lunch D (12th)";
                     document.getElementById("time3").textContent = "12:22 - 12:47";
                 }
