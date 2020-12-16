@@ -1,7 +1,7 @@
 function currentDate(){
 
     var date = new Date();
-    date.setDate(date.getDate() + 7);
+    date.setDate(date.getDate() + 6);
 
     if(date.getSeconds()%2==0)
         document.getElementById("flash").style.color = "yellow";
