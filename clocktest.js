@@ -2,6 +2,8 @@ function currentDate(){
 
     var date = new Date();
     date.setDate(date.getDate() + 6);
+    date.setHours(date.getHours() - 1);
+    date.setMinutes(date.getMinutes() - 30);
 
     if(date.getSeconds()%2==0)
         document.getElementById("flash").style.color = "yellow";
