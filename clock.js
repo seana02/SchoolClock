@@ -1,8 +1,7 @@
 function currentDate(){
 
     var date = new Date();
-    date.setDate(date.getDate()+5);
-    date.setHours(date.getHours()-5);
+
 
 
     if(date.getSeconds()%2==0)
