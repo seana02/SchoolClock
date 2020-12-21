@@ -222,6 +222,9 @@ function currentDate(){
             document.getElementById("time5").textContent = "Happy";
             document.getElementById("p7").textContent = "Winter Break";
             
+            document.getElementById("time3").textContent = "";
+            document.getElementById("lunch").textContent = "";
+            
             /*
             //change lunch display
             {
