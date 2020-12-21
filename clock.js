@@ -217,11 +217,12 @@ function currentDate(){
             document.getElementById("p1").textContent = "4th Period";
             document.getElementById("time2").textContent = "10:00 - 10:50";
             document.getElementById("p2").textContent = "6th Period";
-            document.getElementById("time4").textContent = "10:55 - 12:47";
-            document.getElementById("p3").textContent = "HR & Lunch";
-            document.getElementById("time5").textContent = "12:52 - 12:55";
-            document.getElementById("p7").textContent = "Dismissal";
+            document.getElementById("time4").textContent = "10:55 - ";
+            document.getElementById("p3").textContent = "HR";
+            document.getElementById("time5").textContent = "Happy";
+            document.getElementById("p7").textContent = "Winter Break";
             
+            /*
             //change lunch display
             {
 
@@ -242,6 +243,7 @@ function currentDate(){
                     document.getElementById("time3").textContent = "10:55 - 11:20";
                 }
             }
+            */
             
              //white on current period
             {
@@ -284,6 +286,7 @@ function currentDate(){
                     }
 
 
+                    /*
                     //color lunch period
                     if(between(date, 10,55 , 11,20) || between(date, 11,24 , 11,49) || between(date, 11,53 , 12,18) || between(date, 12,22 , 12,47)){
                         document.getElementById("row3").style.color = "white";
@@ -294,7 +297,7 @@ function currentDate(){
                         if(date.getSeconds()%2==1)
                             document.getElementById("row3").style.color = "#aaffdd";
                     }
-
+                    */
 
 
             }
