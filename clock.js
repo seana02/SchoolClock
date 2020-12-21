@@ -309,7 +309,7 @@ function currentDate(){
         }
         
         //virtual scheduling for 12/18-12/21
-        if((date.getMonth()==11 && (date.getDate()>=18 && date.getDate()<=21)) || (date.getMonth()==0 && date.getDate()<=15)){
+        if((date.getMonth()==11 && ((date.getDate()>=18 && date.getDate()<=20) || (date.getDate()==21 && date.getHours()<=15))) || (date.getMonth()==0 && date.getDate()<=15)){
             document.getElementById("time0").textContent = "8:10 - 8:35";
             document.getElementById("time1").textContent = "8:45 - 10:15";
             document.getElementById("time2").textContent = "10:25 - 11:55";
