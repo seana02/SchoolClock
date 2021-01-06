@@ -523,7 +523,7 @@ function isHoliday(d){
         new Date("12/28/2020"),
         new Date("12/29/2020"),
         new Date("12/30/2020"),
-        new Date("12/31/2021"),
+        new Date("12/31/2020"),
         new Date("1/1/2021"),
         new Date("1/2/2021"),
         new Date("1/3/2021"),
