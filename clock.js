@@ -368,32 +368,8 @@ function currentDate(){
         }//end virtual schedule for 12/18-12/21
         
 
-        if(date.getMonth()==11 && date.getDate()==25){
-            document.getElementById("message").textContent = "Merry Christmas!!";
-
-            var time = document.getElementsByClassName("time");
-            for(var i=0; i<time.length; i++){
-                time[i].style.color = "red";
-            }
-
-            var period = document.getElementsByClassName("period");
-            for(var i=0; i<period.length; i++){
-                period[i].style.color = "white";
-            }
-
-            if(date.getSeconds()%3==0){
-                document.getElementById("clock").style.color = "red";
-            }
-            else if(date.getSeconds()%3==1){
-                document.getElementById("clock").style.color = "white";
-            }
-            else{
-                document.getElementById("clock").style.color = "#1FD537";
-            }
-            
-            if(date.getMonth()==8 && date.getDate()==23){
-                document.getElementById("clock").style.color = "#F8ABBA";
-            }
+        if(date.getMonth()==0 && date.getDate()==20){
+            document.getElementById("p7").textContent = "Homeroom Advisement";
         }
         
         
