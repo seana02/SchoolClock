@@ -369,7 +369,7 @@ function currentDate(){
         
 
         if(date.getMonth()==0 && date.getDate()==20){
-            document.getElementById("p7").textContent = "Homeroom Advisement";
+            document.getElementById("p7").textContent = "Homeroom";
         }
         
         
