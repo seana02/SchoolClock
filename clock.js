@@ -368,6 +368,10 @@ function currentDate(){
         }//end virtual schedule for 12/18-12/21
         
 
+        if((date.getMonth()==0 && date.getDate()==26) || (date.getMonth()==0 && date.getDate()==25 && date.getHours()>=15)){
+            document.getElementById("altid").textContent = "PSAT: Asynchronous"
+        }
+        
         if(date.getMonth()==0 && date.getDate()==20){
             document.getElementById("p7").textContent = "Homeroom";
         }
