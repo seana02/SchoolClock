@@ -219,8 +219,8 @@ function currentDate(){
             document.getElementById("p2").textContent = "6th Period";
             document.getElementById("time4").textContent = "10:55 - 12-55";
             document.getElementById("p3").textContent = "HR";
-            document.getElementById("time5").textContent = "Happy";
-            document.getElementById("p7").textContent = "Winter Break";
+            document.getElementById("time5").textContent = "";
+            document.getElementById("p7").textContent = "";
             
             document.getElementById("time3").textContent = "";
             document.getElementById("lunch").textContent = "";
