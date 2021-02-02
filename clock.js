@@ -130,7 +130,7 @@ function currentDate(){
         else if(between(date, 10,20, 11,50))
             r = 2;
         else if(between(date, 11,50, 11,55))
-            r=3.5;
+            r= 3.5;
         else if(between(date, 11,55, 14,10))
             r = 4;
         else if(between(date, 14,10, 14,20))
@@ -224,9 +224,11 @@ function currentDate(){
             document.getElementById("time5").textContent = "11:24 - 11:49";
             document.getElementById("p7").textContent = "Lunch B";
             
-            if(date.getHour()>=11 && date.getMinute()>=20){
+            if((date.getHour()==11 && date.getMinute()>=20) || date.getHour()>=12){
                 document.getElementById("time4").textContent = "11:53 - 12:18";
                 document.getElementById("p3").textContent = "Lunch C";
+            }
+            if((date.getHour()==11 && date.getMinute()>=49) || date.getHour()>=12){
                 document.getElementById("time5").textContent = "12:22 - 12:47";
                 document.getElementById("p7").textContent = "Lunch D";
             }
@@ -272,12 +274,16 @@ function currentDate(){
                 else if(between(date, 10,0 , 10,50))
                     r = 2;
                 else if(between(date, 10,50 , 10,55))
-                    r=3.5;
+                    r= 2.5;
                 else if(between(date, 10,55 , 12,47))
+                    r = 3;
+                else if(between(date, 11,49, 11,53))
+                    r = 3.5;
+                else if(between(date, 10,55, 11,20) || between(date, 11,53, 12,18))
                     r = 4;
-                else if(between(date, 12,47 , 12,52))
+                else if(between(date, 11,20, 11,24) || between(date, 12,18, 12,22))
                     r = 4.5;
-                else if(between(date, 12,52 , 12,55))
+                else if(between(date, 10,24, 11,49) || between(date, 12,22, 12,47))
                     r = 5;
                 else
                     r = -1;
