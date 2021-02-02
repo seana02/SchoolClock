@@ -217,13 +217,20 @@ function currentDate(){
             document.getElementById("p1").textContent = "4th Period";
             document.getElementById("time2").textContent = "10:00 - 10:50";
             document.getElementById("p2").textContent = "6th Period";
-            document.getElementById("time4").textContent = "10:55 - 12-55";
-            document.getElementById("p3").textContent = "HR";
-            document.getElementById("time5").textContent = "";
-            document.getElementById("p7").textContent = "";
+            document.getElementById("time3").textContent = "10:55 - 12:55";
+            document.getElementById("lunch").textContent = "HR/Lunch";
+            document.getElementById("time4").textContent = "10:55 - 11:20";
+            document.getElementById("p3").textContent = "Lunch A";
+            document.getElementById("time5").textContent = "11:24 - 11:49";
+            document.getElementById("p7").textContent = "Lunch B";
             
-            document.getElementById("time3").textContent = "";
-            document.getElementById("lunch").textContent = "";
+            if(date.getHour()>=11 && date.getMinute()>=20){
+                document.getElementById("time4").textContent = "11:53 - 12:18";
+                document.getElementById("p3").textContent = "Lunch C";
+                document.getElementById("time5").textContent = "12:22 - 12:47";
+                document.getElementById("p7").textContent = "Lunch D";
+            }
+            
             
             /*
             //change lunch display
