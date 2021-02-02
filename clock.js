@@ -210,7 +210,7 @@ function currentDate(){
         
         //early release scheduling
         //Dec22, Feb3, Mar16, Apr15, May21
-        if((date.getMonth()==1 && date.getDate()==3) || (date.getMonth()==1 && date.getDate()==2 && between(date, 15,25, 23,59))){
+        if((date.getMonth()==1 && date.getDate()==3) || (date.getMonth()==1 && date.getDate()==2 && between(date, 14,20, 23,59))){
             document.getElementById("time0").textContent = "8:10 - 9:00";
             document.getElementById("p0").textContent = "2nd Period";
             document.getElementById("time1").textContent = "9:05 - 9:55";
