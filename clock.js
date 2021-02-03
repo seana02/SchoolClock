@@ -265,25 +265,21 @@ function currentDate(){
                     r = -0.5;
                 else if(between(date, 8,10, 9,0))
                     r = 0;
-                else if(between(date, 9,0 , 9,05))
+                else if(between(date, 9,0, 9,5))
                     r = 0.5;
-                else if(between(date, 9,05 , 9,55))
+                else if(between(date, 9,5, 9,55))
                     r = 1;
-                else if(between(date, 9,55 , 10,0))
+                else if(between(date, 9,55, 10,0))
                     r = 1.5;
-                else if(between(date, 10,0 , 10,50))
+                else if(between(date, 10,0, 10,50))
                     r = 2;
-                else if(between(date, 10,50 , 10,55))
-                    r= 2.5;
-                else if(between(date, 10,55 , 12,47))
-                    r = 3;
-                else if(between(date, 11,49, 11,53))
-                    r = 3.5;
-                else if(between(date, 10,55, 11,20) || between(date, 11,53, 12,18))
+                else if(between(date, 10,50, 10,55))
+                    r= 3.5;
+                else if(between(date, 10,55, 12,55))
                     r = 4;
-                else if(between(date, 11,20, 11,24) || between(date, 12,18, 12,22))
+                else if(between(date, 10,55, 11,20))
                     r = 4.5;
-                else if(between(date, 10,24, 11,49) || between(date, 12,22, 12,47))
+                else if(between(date, 14,20, 15,15))
                     r = 5;
                 else
                     r = -1;
@@ -300,6 +296,7 @@ function currentDate(){
                         else
                             document.getElementById("row" + i).style.color = "#66ff99";
                     }
+
 
 
                     /*
