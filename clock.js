@@ -277,9 +277,9 @@ function currentDate(){
                     r= 3.5;
                 else if(between(date, 10,55, 12,55))
                     r = 4;
-                else if(between(date, 10,55, 11,20))
+                if(between(date, 10,55, 11,20))
                     r = 4.5;
-                else if(between(date, 14,20, 15,15))
+                else if(between(date, 11,24, 11,49))
                     r = 5;
                 else
                     r = -1;
