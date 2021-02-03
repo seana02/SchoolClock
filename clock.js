@@ -200,17 +200,9 @@ function currentDate(){
             document.getElementById("message").textContent = "LAST DAAYYY!!!";
         }
         
-        if(date.getMonth()==11 && date.getDate()<=21){
-            document.getElementById("message").textContent = (23 - date.getDate()) + " Days until Winter Break";
-        }
-
-        if(((date.getMonth()==11 && date.getDate()==21) || (date.getMonth()==1 && date.getDate()==2) || (date.getMonth()==2 && date.getDate()==15) || (date.getMonth()==3 && date.getDate()==14) || (date.getMonth()==4 && date.getDate()==20)) && between(date, 15,25, 23,59)){
-            document.getElementById("altid").textContent = "Tomorrow is Early Release";
-        }
-        
         //early release scheduling
         //Dec22, Feb3, Mar16, Apr15, May21
-        if((date.getMonth()==1 && date.getDate()==3) || (date.getMonth()==1 && date.getDate()==2 && between(date, 14,20, 23,59))){
+        if((date.getMonth()==1 && date.getDate()==3)){
             document.getElementById("time0").textContent = "8:10 - 9:00";
             document.getElementById("p0").textContent = "2nd Period";
             document.getElementById("time1").textContent = "9:05 - 9:55";
@@ -224,11 +216,11 @@ function currentDate(){
             document.getElementById("time5").textContent = "11:24 - 11:49";
             document.getElementById("p7").textContent = "Lunch B";
             
-            if((date.getHour()==11 && date.getMinute()>=20) || date.getHour()>=12){
+            if (between(date, 11,20, 23,59)) {
                 document.getElementById("time4").textContent = "11:53 - 12:18";
                 document.getElementById("p3").textContent = "Lunch C";
             }
-            if((date.getHour()==11 && date.getMinute()>=49) || date.getHour()>=12){
+            if (between(date, 11,49, 23,59)) {
                 document.getElementById("time5").textContent = "12:22 - 12:47";
                 document.getElementById("p7").textContent = "Lunch D";
             }
