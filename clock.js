@@ -202,7 +202,7 @@ function currentDate(){
         
         //early release scheduling
         //Dec22, Feb3, Mar16, Apr15, May21
-        if((date.getMonth()==1 && date.getDate()==3)){
+        if ((date.getMonth() == 1 && date.getDate() == 3)) {
             document.getElementById("time0").textContent = "8:10 - 9:00";
             document.getElementById("p0").textContent = "2nd Period";
             document.getElementById("time1").textContent = "9:05 - 9:55";
@@ -215,99 +215,86 @@ function currentDate(){
             document.getElementById("p3").textContent = "Lunch A";
             document.getElementById("time5").textContent = "11:24 - 11:49";
             document.getElementById("p7").textContent = "Lunch B";
-            
-            if (between(date, 11,20, 23,59)) {
-                document.getElementById("time4").textContent = "11:53 - 12:18";
-                document.getElementById("p3").textContent = "Lunch C";
+
+
+        if (between(date, 11,20, 23,59)) {
+            document.getElementById("time4").textContent = "11:53 - 12:18";
+            document.getElementById("p3").textContent = "Lunch C";
+        }
+        if (between(date, 11,49, 23,59)) {
+            document.getElementById("time5").textContent = "12:22 - 12:47";
+            document.getElementById("p7").textContent = "Lunch D";
+        }
+
+
+        //white on current period
+        {
+            for(var i=0; i<6; i++){
+                document.getElementById("row" + i).style.color = "66ff99";
             }
-            if (between(date, 11,49, 23,59)) {
-                document.getElementById("time5").textContent = "12:22 - 12:47";
-                document.getElementById("p7").textContent = "Lunch D";
+            //hr
+            if (between(date, 8, 0, 8, 10)){
+                if (date.getSeconds() % 2 == 0)
+                  document.getElementById("row0").style.color = "yellow";
+            if (date.getSeconds() % 2 == 1)
+                  document.getElementById("row0").style.color = "#aaffdd";
             }
-            
-            
-            /*
-            //change lunch display
-            {
-
-                if(between(date, 11,20 , 11,49)){
-                    document.getElementById("lunch").textContent = "Lunch B (10th)";
-                    document.getElementById("time3").textContent = "11:24 - 11:49";
-                }
-                else if(between(date, 11,49 , 12,18)){
-                    document.getElementById("lunch").textContent = "Lunch C (11th)";
-                    document.getElementById("time3").textContent = "11:53 - 12:18";
-                }
-                else if(between(date, 12,22 , 12,47)){
-                    document.getElementById("lunch").textContent = "Lunch D (12th)";
-                    document.getElementById("time3").textContent = "12:22 - 12:47";
-                }
-                else{
-                    document.getElementById("lunch").textContent = "Lunch A (9th)";
-                    document.getElementById("time3").textContent = "10:55 - 11:20";
-                }
+            else if (between(date, 8, 10, 9, 0))
+                document.getElementById("row0").style.color = "white";
+            else if (between(date, 9, 0, 9, 5)){
+                if (date.getSeconds() % 2 == 0)
+                  document.getElementById("row1").style.color = "yellow";
+                if (date.getSeconds() % 2 == 1)
+                  document.getElementById("row1").style.color = "#aaffdd";
             }
-            */
-            
-             //white on current period
-            {
-                var r;
-                //hr
-                if(between(date, 8,0, 8,10))
-                    r = -0.5;
-                else if(between(date, 8,10, 9,0))
-                    r = 0;
-                else if(between(date, 9,0, 9,5))
-                    r = 0.5;
-                else if(between(date, 9,5, 9,55))
-                    r = 1;
-                else if(between(date, 9,55, 10,0))
-                    r = 1.5;
-                else if(between(date, 10,0, 10,50))
-                    r = 2;
-                else if(between(date, 10,50, 10,55))
-                    r= 3.5;
-                else if(between(date, 10,55, 12,55))
-                    r = 4;
-                if(between(date, 10,55, 11,20))
-                    r = 4.5;
-                else if(between(date, 11,24, 11,49))
-                    r = 5;
-                else
-                    r = -1;
-
-                    for(var i=0; i<=5; i++){
-                        if(i == r)
-                            document.getElementById("row" + r).style.color = "white";
-                        else if(r+0.5 == i){
-                            if(date.getSeconds()%2==0)
-                                document.getElementById("row" + (r+0.5)).style.color = "yellow";
-                            if(date.getSeconds()%2==1)
-                                document.getElementById("row" + (r+0.5)).style.color = "#aaffdd";
-                        }
-                        else
-                            document.getElementById("row" + i).style.color = "#66ff99";
-                    }
-
-
-
-                    /*
-                    //color lunch period
-                    if(between(date, 10,55 , 11,20) || between(date, 11,24 , 11,49) || between(date, 11,53 , 12,18) || between(date, 12,22 , 12,47)){
-                        document.getElementById("row3").style.color = "white";
-                    }
-                    else if(between(date, 10,50 , 10,55) || between(date, 11,20 , 11,24) || between(date, 11,49 , 11,53) || between(date, 12,18 , 12,22)){
-                        if(date.getSeconds()%2==0)
-                            document.getElementById("row3").style.color = "yellow";
-                        if(date.getSeconds()%2==1)
-                            document.getElementById("row3").style.color = "#aaffdd";
-                    }
-                    */
-
-
+            else if (between(date, 9, 5, 9, 55))
+                document.getElementById("row1").style.color = "white";
+            else if (between(date, 9, 55, 10, 0)){
+                if (date.getSeconds() % 2 == 0)
+                  document.getElementById("row2").style.color = "yellow";
+              if (date.getSeconds() % 2 == 1)
+                  document.getElementById("row2").style.color = "#aaffdd";
             }
-            
-        }//end early release scheduling for 12/22
+            else if (between(date, 10, 0, 10, 50))
+                document.getElementById("row2").style.color = "white";
+            else if (between(date, 10, 50, 10, 55)){
+                if (date.getSeconds() % 2 == 0)
+                  document.getElementById("row3").style.color = "yellow";
+                if (date.getSeconds() % 2 == 1)
+                  document.getElementById("row3").style.color = "#aaffdd";
+            }
+            else if (between(date, 10, 55, 12, 55))
+                document.getElementById("row3").style.color = "white";
+
+            //Lunch A/C
+            if (between(date, 10, 55, 11, 20) || between(date, 11,53, 12, 18))
+              document.getElementById("row4").style.color = "white";
+            //Before Lunch B/D
+            else if (between(date, 11, 20, 11, 24) || between(date, 12,18, 12,22)){
+                if (date.getSeconds() % 2 == 0)
+                  document.getElementById("row5").style.color = "yellow";
+                if (date.getSeconds() % 2 == 1)
+                  document.getElementById("row5").style.color = "#aaffdd";
+            }
+            //Lunch B/D
+            if (between(date, 11,24 , 11, 49) || between(date, 12,22, 12, 47))
+                document.getElementById("row5").style.color = "white";
+            //Before Lunch C
+            else if (between(date, 11, 49, 11, 53)){
+                if (date.getSeconds() % 2 == 0)
+                  document.getElementById("row5").style.color = "yellow";
+                if (date.getSeconds() % 2 == 1)
+                  document.getElementById("row5").style.color = "#aaffdd";
+            }
+
+
+
+
+
+
+          }
+
+        } //end early release scheduling for 12/22
         
         if(date.getMonth()==0 && date.getDate()<=15){
             document.getElementById("message").textContent = "All virtual until Jan 19th";
