@@ -300,68 +300,12 @@ function currentDate(){
             document.getElementById("message").textContent = "All virtual until Jan 19th";
         }
         
-        //virtual scheduling for 12/18-1/22
-        if((date.getMonth()==11 && ((date.getDate()>=18 && date.getDate()<=20) || (date.getDate()==21 && date.getHours()<=15))) || (date.getMonth()==0 && date.getDate()<=22)){
-            document.getElementById("time0").textContent = "8:10 - 8:35";
-            document.getElementById("time1").textContent = "8:45 - 10:15";
-            document.getElementById("time2").textContent = "10:25 - 11:55";
-            document.getElementById("time3").textContent = "11:55 - 12:55";
-            document.getElementById("lunch").textContent = "Lunch";
-            document.getElementById("time4").textContent = "12:55 - 2:25";
-            document.getElementById("time5").textContent = "2:35 - 3:25";
-            
-            
-             //white on current period
-            {
-                var r;
-                //hr
-                if(between(date, 8,0, 8,10))
-                    r = -0.5;
-                else if(between(date, 8,10, 8,35))
-                    r = 0;
-                else if(between(date, 8,35 , 8,45))
-                    r = 0.5;
-                else if(between(date, 8,45 , 10,15))
-                    r = 1;
-                else if(between(date, 10,15 , 10,25))
-                    r = 1.5;
-                else if(between(date, 10,25 , 11,55))
-                    r = 2;
-                else if(between(date, 11,55 , 12,55))
-                    r = 3;
-                else if(between(date, 12,55 , 14,25))
-                    r = 4;
-                else if(between(date, 14,25 , 14,35))
-                    r = 4.5;
-                else if(between(date, 14,35 , 15,25))
-                    r = 5;
-                else
-                    r = -1;
-
-                    for(var i=0; i<=5; i++){
-                        if(i == r)
-                            document.getElementById("row" + r).style.color = "white";
-                        else if(r+0.5 == i){
-                            if(date.getSeconds()%2==0)
-                                document.getElementById("row" + (r+0.5)).style.color = "yellow";
-                            if(date.getSeconds()%2==1)
-                                document.getElementById("row" + (r+0.5)).style.color = "#aaffdd";
-                        }
-                        else
-                            document.getElementById("row" + i).style.color = "#66ff99";
-                    }
-
-
-            }
-            
-        }//end virtual schedule for 12/18-12/21
-        
 
         if((date.getMonth()==0 && date.getDate()==26) || (date.getMonth()==0 && date.getDate()==25 && date.getHours()>=15)){
             document.getElementById("altid").textContent = "PSAT: Asynchronous"
         }
         
-        if(date.getMonth()==0 && date.getDate()==20){
+        if(date.getMonth()==1 && (date.getDate()==8 || date.getDate()==10)){
             document.getElementById("p7").textContent = "Homeroom";
         }
         
