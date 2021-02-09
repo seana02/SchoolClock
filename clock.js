@@ -305,9 +305,6 @@ function currentDate(){
             document.getElementById("altid").textContent = "PSAT: Asynchronous"
         }
         
-        if(date.getMonth()==1 && (date.getDate()==8 || date.getDate()==10)){
-            document.getElementById("p7").textContent = "Homeroom";
-        }
         
         
 
