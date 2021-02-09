@@ -195,7 +195,9 @@ function currentDate(){
     //Hard-Coded Date Labels
     {
         
-        
+        if(date.getMonth()==1 && (date.getDate()>=9 && date.getDate()<=12)){
+            document.getElementById("message").textContent = "Atkins Acceptable!";
+        }
         if(date.getMonth()==11 && date.getDate()==22){
             document.getElementById("message").textContent = "LAST DAAYYY!!!";
         }
