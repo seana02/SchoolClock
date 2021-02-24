@@ -54,6 +54,14 @@ function currentDate(){
             }
 
         }
+        
+        //total number of days
+        var totalDays = 0;
+        for(var d = new Date("8/17/2020"); (d.getMonth()==4 && d.getDate()==26); d.setDate(d.getDate() + 1)){
+            if(d.getDay() != 0 && d.getDay() != 6 && !isHoliday(d)){
+                totalDays++;
+            }
+        }
 
         var dayText = "Day " + dayCount;
         if(date.getDay() == 0 || date.getDay() == 6){
@@ -63,7 +71,7 @@ function currentDate(){
         }
 
         document.getElementById("schoolDay").textContent = dayText;
-        document.getElementById("message").textContent = 180-dayCount + " Days Left";
+        document.getElementById("message").textContent = totalDays-dayCount + " Days Left";
         
     }
 
@@ -200,9 +208,6 @@ function currentDate(){
         }
         if(date.getMonth()==11 && date.getDate()==22){
             document.getElementById("message").textContent = "LAST DAAYYY!!!";
-        }
-        if(date.getMonth()==1 && date.getDate()==22){
-            document.getElementById("p7").textContent = "Homeroom";
         }
         
         //early release scheduling
