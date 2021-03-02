@@ -202,6 +202,9 @@ function currentDate(){
         if(date.getMonth()==11 && date.getDate()==22){
             document.getElementById("message").textContent = "LAST DAAYYY!!!";
         }
+        if(date.getMonth()==2 && date.getDate()==3){
+            document.getElementById("p7").textContent = "Homeroom";
+        }
         
         //early release scheduling
         //Dec22, Feb3, Mar16, Apr15, May21
