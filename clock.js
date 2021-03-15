@@ -64,7 +64,7 @@ function currentDate(){
         }
 
         document.getElementById("schoolDay").textContent = dayText;
-        document.getElementById("message").textContent = (180-dayCount) + " Days Left";
+        document.getElementById("message").textContent = (176-dayCount) + " School Days Until Graduation";
         
     }
 
