@@ -196,15 +196,18 @@ function currentDate(){
     //Hard-Coded Date Labels
     {
         
+        if(date.getMonth()==3 && date.getDate()==21){
+            document.getElementById("message").textContent = "Cap and Gown Day";
+            document.getElementById("p7").textContent = "Homeroom";
+        }
+        
         if(date.getMonth()==1 && (date.getDate()>=9 && date.getDate()<=12)){
             document.getElementById("message").textContent = "Atkins Acceptable!";
         }
         if(date.getMonth()==11 && date.getDate()==22){
             document.getElementById("message").textContent = "LAST DAAYYY!!!";
         }
-        if(date.getMonth()==2 && date.getDate()==3){
-            document.getElementById("p7").textContent = "Homeroom";
-        }
+
         
         //early release scheduling
         //Dec22, Feb3, Mar16, Apr15, May21
