@@ -196,6 +196,10 @@ function currentDate(){
     //Hard-Coded Date Labels
     {
         
+        if(date.getMonth()==3 && date.getDate()==7){
+            document.getElementById("p7").textContent = "Homeroom";
+        }
+        
         if(date.getMonth()==3 && date.getDate()==21){
             document.getElementById("message").textContent = "Cap and Gown Day";
             document.getElementById("p7").textContent = "Homeroom";
