@@ -217,11 +217,11 @@ function currentDate(){
         //Dec22, Feb3, Mar16, Apr15, May21
         if ((date.getMonth() == 2 && date.getDate() == 16) || (date.getMonth() == 3 && date.getDate() == 15) || (date.getMonth() == 4 && date.getDate() == 21)) {
             document.getElementById("time0").textContent = "8:10 - 9:00";
-            document.getElementById("p0").textContent = "2nd Period";
+            document.getElementById("p0").textContent = "1st Period";
             document.getElementById("time1").textContent = "9:05 - 9:55";
-            document.getElementById("p1").textContent = "4th Period";
+            document.getElementById("p1").textContent = "3rd Period";
             document.getElementById("time2").textContent = "10:00 - 10:50";
-            document.getElementById("p2").textContent = "6th Period";
+            document.getElementById("p2").textContent = "5th Period";
             document.getElementById("time3").textContent = "10:55 - 12:55";
             document.getElementById("lunch").textContent = "HR/Lunch";
             document.getElementById("time4").textContent = "10:55 - 11:20";
