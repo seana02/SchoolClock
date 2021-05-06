@@ -196,6 +196,90 @@ function currentDate(){
     //Hard-Coded Date Labels
     {
         
+        if(date.getMonth()=4 && date.getDate()==13){
+            document.getElementById("time0").textContent = "8:10 - 9:40";
+            document.getElementById("p0").textContent = "1st Period";
+            document.getElementById("time1").textContent = "9:50 - 11:20";
+            document.getElementById("p1").textContent = "3rd Period";
+            document.getElementById("time2").textContent = "11:25 - 1:40";
+            document.getElementById("p2").textContent = "5th Period";
+            document.getElementById("time3").textContent = "11:25 - 11:55";
+            document.getElementById("lunch").textContent = "Lunch A";
+            document.getElementById("time4").textContent = "1:50 - 2:40";
+            document.getElementById("p3").textContent = "7th Period";
+            document.getElementById("time5").textContent = "2:45 - 3:15";
+            document.getElementById("p7").textContent = "Homeroom";
+            
+            {
+                var r;
+                //hr
+                if(between(date, 8,0, 8,10))
+                    r = -0.5;
+                else if(between(date, 8,10, 9,40))
+                    r = 0;
+                else if(between(date, 9,40, 9,50))
+                    r = 0.5;
+                else if(between(date, 9,50, 11,20))
+                    r = 1;
+                else if(between(date, 11,20, 11,25))
+                    r = 1.5;
+                else if(between(date, 11,25, 13,40))
+                    r = 2;
+                else if(between(date, 13,40, 13,50))
+                    r= 3.5;
+                else if(between(date, 13,50, 14,40))
+                    r = 4;
+                else if(between(date, 14,40, 14,45))
+                    r = 4.5;
+                else if(between(date, 14,45, 15,15))
+                    r = 5;
+                else
+                    r = -1;
+
+                    for(var i=0; i<=5; i++){
+                        if(i == r)
+                            document.getElementById("row" + r).style.color = "white";
+                        else if(r+0.5 == i){
+                            if(date.getSeconds()%2==0)
+                                document.getElementById("row" + (r+0.5)).style.color = "yellow";
+                            if(date.getSeconds()%2==1)
+                                document.getElementById("row" + (r+0.5)).style.color = "#aaffdd";
+                        }
+                        else
+                            document.getElementById("row" + i).style.color = "#66ff99";
+                    }
+            }
+            
+            if(between(date, 11,25, 11,55) || between(date, 12,00, 12,30) || between(date, 12,35, 13,05) || between(date, 13,10, 13,40)){
+                document.getElementById("row3").style.color = "white";
+            }
+            else if(between(date, 11,20, 11,25) || between(date, 11,55, 12,00) || between(date, 12,30, 12,35) || between(date, 13,05, 13,10)){
+                if(date.getSeconds()%2==0)
+                    document.getElementById("row3").style.color = "yellow";
+                if(date.getSeconds()%2==1)
+                    document.getElementById("row3").style.color = "#aaffdd";
+            }
+            
+            if(between(date, 11,55, 12,30)){
+            document.getElementById("lunch").textContent = "Lunch B";
+            document.getElementById("time3").textContent = "12:00 - 12:30";
+            }
+            else if(between(date, 12,30, 13,05)){
+                document.getElementById("lunch").textContent = "Lunch C";
+                document.getElementById("time3").textContent = "12:35 - 1:05";
+            }
+            else if(between(date, 13,05, 13,40)){
+                document.getElementById("lunch").textContent = "Lunch D";
+                document.getElementById("time3").textContent = "1:10 - 1:40";
+            }
+            else{
+                document.getElementById("lunch").textContent = "Lunch A";
+                document.getElementById("time3").textContent = "11:25 - 11:55";
+            }
+
+            
+        }
+        
         if(date.getMonth()==3 && date.getDate()==7){
             document.getElementById("p7").textContent = "Homeroom";
         }
