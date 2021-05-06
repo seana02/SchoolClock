@@ -196,7 +196,7 @@ function currentDate(){
     //Hard-Coded Date Labels
     {
         
-        if(date.getMonth()=4 && date.getDate()==13){
+        if(date.getMonth()==4 && date.getDate()==13){
             document.getElementById("time0").textContent = "8:10 - 9:40";
             document.getElementById("p0").textContent = "1st Period";
             document.getElementById("time1").textContent = "9:50 - 11:20";
